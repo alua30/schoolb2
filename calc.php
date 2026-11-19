@@ -41,3 +41,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = 'Ошибка: заполните все поля формы!';
     }
 }
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Калькулятор</title>
+</head>
+<body>
+  <h1>Калькулятор</h1>
+
+  <?php
+  // Вывод результата перед формой
+  if ($result != '') {
+      echo "<p><b>$result</b></p>";
+  }
+  ?>
+
+  <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+    <label>Число 1:</label><br />
+    <input type="text" name="num1" /><br /><br />
+
+    <label>Оператор (+, -, *, /):</label><br />
+    <input type="text" name="operator" size="3" /><br /><br />
+
+    <label>Число 2:</label><br />
+    <input type="text" name="num2" /><br /><br />
+
+    <input type="submit" value="Считать" />
+  </form>
+</body>
+</html>
