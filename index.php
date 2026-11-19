@@ -1,4 +1,5 @@
 <?php 
+  include 'inc/cookie.inc.php';
   include 'inc/headers.inc.php'; 
 ?>
 <!DOCTYPE html>
@@ -23,6 +24,14 @@
 
   <div id="content">
     <!-- Заголовок -->
+         <?php
+      if ($visitCounter == 1) {
+        echo '<p>Спасибо, что зашли на огонек</p>';
+      } else {
+        echo "<p>Вы зашли к нам $visitCounter раз<br />";
+        echo "Последнее посещение: $lastVisit</p>";
+      }
+    ?>
     <h1><?= $header?></h1>
     <!-- Заголовок -->
     <!-- Область основного контента -->
