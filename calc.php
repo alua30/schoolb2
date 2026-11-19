@@ -15,7 +15,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $num2 = (int) trim($_POST['num2']);
         $operator = trim(strip_tags($_POST['operator']));
 
-        // здесь будет switch (упражнение 2)
+                switch ($operator) {
+            case '+':
+                $result = "Результат: $num1 + $num2 = " . ($num1 + $num2);
+                break;
+            case '-':
+                $result = "Результат: $num1 - $num2 = " . ($num1 - $num2);
+                break;
+            case '*':
+                $result = "Результат: $num1 * $num2 = " . ($num1 * $num2);
+                break;
+            case '/':
+                if ($num2 == 0) {
+                    $result = 'Ошибка: на ноль делить нельзя!';
+                } else {
+                    $result = "Результат: $num1 / $num2 = " . ($num1 / $num2);
+                }
+                break;
+            default:
+                $result = 'Ошибка: неизвестный оператор "' . htmlspecialchars($operator)
+                        . '". Используйте только +, -, * или /';
+        }
 
     } else {
         $result = 'Ошибка: заполните все поля формы!';
