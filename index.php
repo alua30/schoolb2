@@ -1,7 +1,12 @@
 <?php 
+  // Имя файла журнала
+  define('PATH_LOG', 'path.log');
+  include 'inc/log.inc.php';
+
   include 'inc/cookie.inc.php';
   include 'inc/headers.inc.php'; 
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -53,6 +58,8 @@
       <li><a href='index.php?id=info'>Информация</a>
       </li>
       <li><a href='index.php?id=gbook'>Гостевая книга</a>
+      </li>
+      <li><a href='index.php?id=log'>Журнал посещений</a>
       </li>
     </ul>
     <!-- Навигация -->
